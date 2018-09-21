@@ -197,9 +197,7 @@ func (mb *MultiBuffer) Release() {
 
 func (mb MultiBuffer) String() string {
 	v := make([]interface{}, len(mb))
-	for i, b := range mb {
-		v[i] = b
-	}
+	copy(v, mb)
 	return serial.Concat(v...)
 }
 
